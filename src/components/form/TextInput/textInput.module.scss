@@ -1,0 +1,13 @@
+@use "../../../styles/mixins";
+
+@include mixins.input_style;
+
+.form_input_error {
+  border-color: #FF3333;
+  background-color: #FFDDDD;
+  color: #FF3333;
+  &::placeholder {
+    color: #FF8888;
+  }
+}
+

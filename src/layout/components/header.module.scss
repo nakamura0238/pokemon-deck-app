@@ -1,0 +1,30 @@
+@use "./../../styles";
+
+.header_container {
+  position: fixed;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: styles.$header_height;
+  background-color: #FFFFFF;
+  background-color: #333333;
+  border-bottom: 1px solid #DDDDDD;
+  color: #FFFFFF;
+
+  .nav_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    min-width: 375px;
+
+    .link {
+      line-height: 1.4rem;
+    }
+
+    .current {
+      border-bottom: 3px solid #FFFFFF;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@use "./../../../../styles/colors";
+@use "./../../../../styles";
+
+.deckItem_grid {
+  display: grid;
+  grid-template-columns: repeat(1 , 1fr auto auto);
+  padding-bottom: 10px;
+
+  .deckItem_common {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 3;
+    padding: 10px 0;
+  }
+
+  .deckItem_box {
+    @extend .deckItem_common;
+    margin: 0 10px;
+    &:has(.checkbox:checked) {
+      background-color: #DDDDDD;
+    }
+    &:hover {
+      background-color: #EEEEEE;
+    }
+  }
+
+  .item_label_box {
+    @extend .deckItem_common;
+    margin: 0 10px;
+    border-bottom: 1px solid #CCCCCC;
+  }
+}
+
+
+
+.deckItem_cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.number {
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  text-align: right;
+}
+
+.type {
+  max-width: 10rem;
+}
+
+.delete_dialog {
+  z-index: calc(infinity);
+  position: fixed;
+  min-width: 300px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+  top: calc(styles.$header_height + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  p {
+    text-align: center;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 20px;
+  }
+}
+
+.button {
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.primary {
+  @extend .button;
+  border: 1px solid colors.$text_color;
+  background-color: colors.$text_color;
+  color: #FFFFFF;
+  &:hover {
+    border: 1px solid #666666;
+    background-color: #666666;
+  }
+}
+
+.cancel {
+  @extend .button;
+  border: 1px solid colors.$text_color;
+  background-color: #FFFFFF;
+  color: colors.$text_color;
+  &:hover {
+    border: 1px solid #666666;
+    background-color: #666666;
+    color: #FFFFFF;
+  }
+}
+
+.delete {
+  @extend .button;
+  border: 1px solid colors.$error_color;
+  background-color: #FFFFFF;
+  color: colors.$error_color;
+  &:hover {
+    background-color: colors.$error_color;
+    color: #FFFFFF;
+  }
+}
+
+.delete_enter {
+  @extend .button;
+  border: 1px solid colors.$error_color;
+  background-color: colors.$error_color;
+  color: #FFFFFF;
+  &:hover {
+    border: 1px solid #FF6666;
+    background-color: #FF6666;
+  }
+}

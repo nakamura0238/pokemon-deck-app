@@ -1,0 +1,27 @@
+@use "../../../../styles/mixins";
+@use "../../../../styles/colors";
+
+@include mixins.input_style;
+
+.title_form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 20px 10px;
+}
+
+.button {
+  padding: 0.3rem 1rem;
+  border: 1px solid colors.$form_border_color;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-weight: 600;
+  background-color: colors.$form_border_color;
+  color: #FFFFFF;
+  &:disabled {
+    border-color:#bbbbbb ;
+    background-color: #bbbbbb;
+    cursor:not-allowed
+  }
+}

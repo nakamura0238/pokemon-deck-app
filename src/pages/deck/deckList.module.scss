@@ -1,0 +1,135 @@
+@use "./../../styles";
+@use "./../../styles/colors";
+
+.deckList_layout {
+  flex-grow: 1;
+  padding: calc(styles.$header_height + 20px) 20px 20px;
+  .deckList_container {
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      border: 1px solid #DDDDDD;
+      overflow: hidden;
+      padding-bottom: 10px;
+
+    .page_title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 10px 10px;
+      border-bottom: 1px solid #DDDDDD;
+      padding: 10px 0;
+      p {
+        padding: 0 10px;
+        font-size: 1.2rem;
+      }
+    }
+
+    .deck_box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0 10px;
+      .deck_link {
+        flex-grow: 1;
+        display: block;
+        padding: 10px;
+        border-radius: 10px;
+        &:hover, &:focus {
+          background-color: #DDDDDD;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.primary {
+  @extend .button;
+  border: 1px solid colors.$text_color;
+  background-color: colors.$text_color;
+  color: #FFFFFF;
+  &:hover {
+    border: 1px solid #666666;
+    background-color: #666666;
+  }
+}
+
+.cancel {
+  @extend .button;
+  border: 1px solid colors.$text_color;
+  background-color: #FFFFFF;
+  color: colors.$text_color;
+  &:hover {
+    border: 1px solid #666666;
+    background-color: #666666;
+    color: #FFFFFF;
+  }
+}
+
+.delete {
+  @extend .button;
+  border: 1px solid colors.$error_color;
+  background-color: #FFFFFF;
+  color: colors.$error_color;
+  &:hover {
+    background-color: colors.$error_color;
+    color: #FFFFFF;
+  }
+}
+
+.delete_enter {
+  @extend .button;
+  border: 1px solid colors.$error_color;
+  background-color: colors.$error_color;
+  color: #FFFFFF;
+  &:hover {
+    border: 1px solid #FF6666;
+    background-color: #FF6666;
+  }
+}
+
+
+.modal_overlay {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.3);
+  .modal_inner {
+    min-width: 300px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    p {
+      text-align: center;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+      padding-top: 20px;
+    }
+  }
+}
+
+@include styles.media("tablet") {
+  .deckList_layout {
+    padding: calc(styles.$header_height + 20px) 10px 20px;
+  }
+}
+

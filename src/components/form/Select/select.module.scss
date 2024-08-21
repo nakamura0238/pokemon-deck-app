@@ -1,0 +1,22 @@
+@use "../../../styles/mixins";
+@use "../../../styles/colors";
+
+@include mixins.input_style;
+
+.select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-size: 12px auto; /* 画像のサイズ（幅 高さ）*/
+  background-position: right 12px center; /* 画像の位置 */
+}
+
+.form_input_error {
+  border-color: colors.$error_color;
+  background-color: colors.$error_background_color;
+  color: colors.$error_color;
+  &::placeholder {
+    color: colors.$error_placeholder_color;
+  }
+}
+

@@ -1,0 +1,52 @@
+@use "./colors";
+
+@mixin input_style {
+  .input_box {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    label {
+      font-size: 0.8rem;
+      margin-bottom: 3px;
+    }
+  }
+
+  .form_input {
+    flex-grow: 1;
+    padding: 0.3rem 1rem;
+    border-left: 5px solid colors.$form_border_color;
+    border-bottom: 1px solid colors.$form_border_color;
+    border: 1px solid colors.$form_border_color;
+    
+    border-radius: 5px;
+    color: colors.$text_color;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .label_box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .error_message {
+    font-size: 0.8rem;
+    color: colors.$error_color;
+  }
+};
+
+$breakpoints: (
+  "pc": "screen and (min-width: 800px)",
+  "tablet": "screen and (max-width: 799px)",
+  // "sp": "screen and (max-width: 420px)",
+  // "small-screen": "screen and (max-width: 320px)",
+);
+
+@mixin media($key) {
+  @media #{map-get($breakpoints, $key)} {
+    @content;
+  }
+}
