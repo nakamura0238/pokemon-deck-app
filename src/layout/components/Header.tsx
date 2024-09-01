@@ -1,4 +1,3 @@
-import React from 'react';
 import {Link, useLocation} from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from '@/layout/components/header.module.scss';
