@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { db } from "@/db/db";
 import { useLiveQuery } from "dexie-react-hooks";
 import { z } from "zod";
-import { SubmitHandler, useForm, useWatch } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import styles from "@/pages/deck/edit/components/title.module.scss";
 import { TextInput } from "@/components/form/TextInput";

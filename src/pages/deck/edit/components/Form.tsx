@@ -8,7 +8,6 @@ import styles from "./form.module.scss";
 import { NumberInput } from "@/components/form/NumberInput";
 import { TextInput } from "@/components/form/TextInput";
 import { Select } from "@/components/form/Select";
-import { useDeviceSize } from "@/hooks/useDeviceSize";
 import toast from "react-hot-toast";
 import { editContext } from "..";
 
@@ -31,9 +30,6 @@ const itemSchema = z.object({
 export const ItemForm: React.FC<Props> = ({ id }) => {
   const {
     checkArray,
-    setCheckArray,
-    selectedList,
-    setSelectedList,
     resetFunc,
   } = useContext(editContext);
   
