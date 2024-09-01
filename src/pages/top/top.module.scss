@@ -1,4 +1,6 @@
 @use "./../../styles";
+@use "./../../styles/mixins";
+@use "./../../styles/colors";
 
 .top_layout {
   flex-grow: 1;
@@ -15,10 +17,28 @@
   }
 }
 
+.discription_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+  & > h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  & > p {
+    font-size: 1.2rem;
+  }
+}
+
 .link_container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
 }
 
 .notice_container {
@@ -27,6 +47,64 @@
   align-items: center;
   & > p {
     font-size: 0.9rem;
+  }
+  .notice_label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #FF6666;
+  }
+}
+
+.button {
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  transition: 0.2s;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.primary {
+  @extend .button;
+  border: 1px solid colors.$text_color;
+  background-color: colors.$text_color;
+  color: #FFFFFF;
+  &:hover {
+    border: 1px solid #666666;
+    background-color: #666666;
+  }
+}
+
+.cancel {
+  @extend .button;
+  border: 1px solid colors.$text_color;
+  background-color: #FFFFFF;
+  color: colors.$text_color;
+  &:hover {
+    border: 1px solid #666666;
+    background-color: #666666;
+    color: #FFFFFF;
+  }
+}
+
+.delete {
+  @extend .button;
+  border: 1px solid colors.$error_color;
+  background-color: #FFFFFF;
+  color: colors.$error_color;
+  &:hover {
+    background-color: colors.$error_color;
+    color: #FFFFFF;
+  }
+}
+
+.delete_enter {
+  @extend .button;
+  border: 1px solid colors.$error_color;
+  background-color: colors.$error_color;
+  color: #FFFFFF;
+  &:hover {
+    border: 1px solid #FF6666;
+    background-color: #FF6666;
   }
 }
 
